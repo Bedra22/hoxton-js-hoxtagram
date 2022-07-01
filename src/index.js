@@ -6,22 +6,7 @@ let state = {
     comments: [],
 }
 
-function getimagefromserver() {
 
-    fetch("http://localhost:3000/images")
-        .then(resp => resp.json())
-        .then(imagefromserver => {
-            state.images = imagefromserver
-        })
-}
-
-function getcommentfromserver() {
-    fetch("http://localhost:3000/comments")
-        .then(resp => resp.json())
-        .then(commentsfromserver => {
-            state.comments = commentsfromserver
-        })
-}
 
 function createimagesection() {
     let Section = document.querySelector('.image-container')
@@ -70,6 +55,25 @@ function createimagesection() {
 
 function render() {
     createimagesection()
+}
+function getimagefromserver() {
+
+    fetch("http://localhost:3000/images")
+        .then(resp => resp.json())
+        .then(imagefromserver => {
+            state.images = imagefromserver
+        })
+    render()
+}
+
+function getcommentfromserver() {
+    fetch("http://localhost:3000/comments")
+        .then(resp => resp.json())
+        .then(commentsfromserver => {
+            state.comments = commentsfromserver
+        })
+    render()
+
 }
 
 render()
