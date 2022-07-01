@@ -3,22 +3,23 @@
 
 let state = {
     images: [],
+    comments: [],
 }
 
 function getimagefromserver() {
 
     fetch("http://localhost:3000/images")
         .then(resp => resp.json())
-        .then(images => {
-            console.log(images)
+        .then(imagefromserver => {
+            state.images = imagefromserver
         })
 }
 
 function getcommentfromserver() {
     fetch("http://localhost:3000/comments")
         .then(resp => resp.json())
-        .then(comments => {
-            console.log(comments)
+        .then(commentsfromserver => {
+            state.comments = commentsfromserver
         })
 }
 
