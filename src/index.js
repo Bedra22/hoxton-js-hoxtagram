@@ -66,6 +66,8 @@ function getimagefromserver() {
     render()
 }
 
+getimagefromserver()
+
 function getcommentfromserver() {
     fetch("http://localhost:3000/comments")
         .then(resp => resp.json())
@@ -75,5 +77,7 @@ function getcommentfromserver() {
     render()
 
 }
+
+getcommentfromserver()
 
 render()
