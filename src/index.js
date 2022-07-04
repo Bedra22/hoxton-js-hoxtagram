@@ -11,46 +11,51 @@ let state = {
 function createimagesection() {
     let Section = document.querySelector('.image-container')
 
-    Section.textContent = ''
+    for (let image of state.images) {
 
-    let article = document.createElement('div')
-    article.className = 'image-card'
+        Section.textContent = ''
 
-    let H2El = document.createElement('h2')
-    H2El.className = 'title'
-    H2El.textContent = 'Title of image goes here'
+        let article = document.createElement('div')
+        article.className = 'image-card'
 
-    let imgEl = document.createElement('img')
-    imgEl.className = 'image'
-    imgEl.src = './assets/image-placeholder.jpg'
+        let H2El = document.createElement('h2')
+        H2El.className = 'title'
+        H2El.textContent = 'Title of image goes here'
 
-    let divEl = document.createElement('div')
-    divEl.className = 'likes-section'
+        let imgEl = document.createElement('img')
+        imgEl.className = 'image'
+        imgEl.src = './assets/image-placeholder.jpg'
 
-    let spanEl = document.createElement('span')
-    spanEl.className = 'likes'
-    spanEl.textContent = '0 likes'
+        let divEl = document.createElement('div')
+        divEl.className = 'likes-section'
 
-    let buttonEl = document.createElement('button')
-    buttonEl.className = 'like-button'
-    buttonEl.textContent = '♥'
+        let spanEl = document.createElement('span')
+        spanEl.className = 'likes'
+        spanEl.textContent = '0 likes'
 
-    let ulEl = document.createElement('ul')
-    ulEl.className = 'comments'
+        let buttonEl = document.createElement('button')
+        buttonEl.className = 'like-button'
+        buttonEl.textContent = '♥'
 
-    let li1El = document.createElement('li')
-    li1El.textContent = 'Get rid of these comments'
+        let ulEl = document.createElement('ul')
+        ulEl.className = 'comments'
 
-    let li2El = document.createElement('li')
-    li2El.textContent = 'And replace them with the real ones'
+        let li1El = document.createElement('li')
+        li1El.textContent = 'Get rid of these comments'
 
-    let li3El = document.createElement('li')
-    li3El.textContent = 'From the server'
+        let li2El = document.createElement('li')
+        li2El.textContent = 'And replace them with the real ones'
 
-    ulEl.append(li1El, li2El, li3El)
-    divEl.append(spanEl, buttonEl)
-    article.append(H2El, imgEl, divEl, ulEl)
-    Section?.append(article)
+        let li3El = document.createElement('li')
+        li3El.textContent = 'From the server'
+
+
+
+        ulEl.append(li1El, li2El, li3El)
+        divEl.append(spanEl, buttonEl)
+        article.append(H2El, imgEl, divEl, ulEl)
+        Section?.append(article)
+    }
 }
 
 function render() {
